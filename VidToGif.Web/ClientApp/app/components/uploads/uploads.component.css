@@ -1,0 +1,20 @@
+.upload-card {
+    display: flex;
+    align-content: space-around;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 4px;
+    border-radius: 2px;
+    margin-bottom: 6px;
+    min-width: 220px;
+    flex-wrap: wrap;
+}
+
+.upload-card a {
+    margin-left: 10px;
+}
+
+.upload-card p,
+.upload-card a {
+    flex: 1 1 auto;
+}

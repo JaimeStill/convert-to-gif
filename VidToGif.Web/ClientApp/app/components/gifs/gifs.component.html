@@ -1,0 +1,23 @@
+<md-progress-bar *ngIf="app.hasGifs.value && !app.gifs.value.length > 0" color="accent" mode="indeterminate"></md-progress-bar>
+<section *ngIf="app.gifs.value.length > 0 && app.hasGifs.value" class="gif-card mat-elevation-z5">
+    <button md-icon-button (click)="toggleExpand()">
+        <md-icon *ngIf="expanded">expand_more</md-icon>
+        <md-icon *ngIf="!expanded">chevron_right</md-icon>
+    </button>
+    <p>GIFs</p>
+</section>
+<div *ngIf="expanded && app.gifs.value.length > 0 && app.hasGifs.value" [@fadeInOut]>
+    <section *ngFor="let gif of app.gifs | async" class="gif-card mat-elevation-z5" [style.margin-left.px]="30">
+        <a class="link" [href]="gif.url" target="_blank">{{gif.name}}</a>
+        <button md-icon-button [mdMenuTriggerFor]="menu">
+            <md-icon>more_horiz</md-icon>
+        </button>
+        <md-menu #menu="mdMenu" [overlapTrigger]="false">
+            <button md-menu-item (click)="deleteGif(gif)">
+                <md-icon>delete</md-icon>
+                <span>Delete</span>
+            </button>
+        </md-menu>
+    </section>
+</div>
+<h2 *ngIf="!app.gifs.value.length > 0 && !app.hasGifs.value">No GIFs Created</h2>

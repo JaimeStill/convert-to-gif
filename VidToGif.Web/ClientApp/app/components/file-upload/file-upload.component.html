@@ -1,0 +1,3 @@
+﻿<input type="file" (change)="fileChange($event)" placeholder="Upload Video" #fileInput accept="video/*">
+<button md-button color="primary" (click)="fileInput.click()">Select Video</button>
+<button md-button color="accent" (click)="uploadVideo()" *ngIf="fileCount > 0" [disabled]="app.uploading | async">Upload Video</button>

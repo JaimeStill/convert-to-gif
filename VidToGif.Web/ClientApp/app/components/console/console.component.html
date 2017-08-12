@@ -1,0 +1,6 @@
+﻿<section class="console" #outputContainer>
+    <div *ngFor="let stream of app.output | async">
+        <pre [style.color]="stream.hasError ? 'red' : 'limegreen'">{{stream.hasError ? stream.error : stream.result}}</pre>
+    </div>
+</section>
+<md-progress-bar color="accent" mode="indeterminate" *ngIf="app.converting | async"></md-progress-bar>

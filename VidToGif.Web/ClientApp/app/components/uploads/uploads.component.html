@@ -1,0 +1,27 @@
+<md-progress-bar *ngIf="app.hasUploads.value && !app.uploads.value.length > 0" color="accent" mode="indeterminate"></md-progress-bar>
+<section *ngIf="app.uploads.value.length > 0 && app.hasUploads.value" class="upload-card mat-elevation-z5">
+    <button md-icon-button (click)="toggleExpand()">
+        <md-icon *ngIf="expanded">expand_more</md-icon>
+        <md-icon *ngIf="!expanded">chevron_right</md-icon>
+    </button>
+    <p>Uploads</p>
+</section>
+<div *ngIf="expanded && app.uploads.value.length > 0 && app.hasUploads.value" [@fadeInOut]>
+    <section *ngFor="let upload of app.uploads | async" class="upload-card mat-elevation-z5" [style.margin-left.px]="30">
+        <a class="link" [href]="upload.url" target="_blank">{{upload.name}}</a>
+        <button md-icon-button [mdMenuTriggerFor]="menu">
+            <md-icon>more_horiz</md-icon>
+        </button>
+        <md-menu #menu="mdMenu" [overlapTrigger]="false">
+            <button md-menu-item (click)="convertUpload(upload)">
+                <md-icon>videocam</md-icon>
+                <span>Convert</span>
+            </button>
+            <button md-menu-item (click)="deleteUpload(upload)">
+                <md-icon>delete</md-icon>
+                <span>Delete</span>
+            </button>
+        </md-menu>
+    </section>
+</div>
+<h2 *ngIf="!app.uploads.value.length > 0 && !app.hasUploads.value">No Videos Uploaded</h2>

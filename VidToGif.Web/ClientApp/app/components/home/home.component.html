@@ -1,0 +1,21 @@
+<console></console>
+<md-toolbar color="primary">Upload Video</md-toolbar>
+<h3 class="video-label" *ngIf="app.video.value.name">Pending Upload: {{app.video.value.name}}</h3>
+<file-upload (onSelected)="fileChange($event)" (onUploaded)="uploadVideo($event)"></file-upload>
+<md-toolbar *ngIf="app.editing | async" color="primary">GIF Options</md-toolbar>
+<section class="options-container">
+    <gif-options *ngIf="app.editing | async"></gif-options>
+</section>
+<md-toolbar *ngIf="app.uploads.value.length > 0 || app.gifs.value.length > 0" color="primary">
+    <span>Files</span>
+    <span class="spacer"></span>
+    <button md-raised-button color="accent" (click)="app.clearAllUploads()">Delete All Files</button>
+</md-toolbar>
+<section class="file-container">
+    <section class="upload-container">
+        <uploads></uploads>
+    </section>
+    <section class="gif-container">
+        <gifs></gifs>
+    </section>
+</section>

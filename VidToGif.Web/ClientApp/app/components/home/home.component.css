@@ -1,0 +1,29 @@
+.video-label {
+    margin: 10px 15px;
+}
+
+md-toolbar.mat-toolbar {
+    margin: 20px 0;
+}
+
+.file-container {
+    display: flex;
+    align-content: space-around;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+
+.file-container .upload-container,
+.file-container .gif-container {
+    flex: 1 1 auto;
+    max-width: 48%;
+    margin: 10px;    
+}
+
+.options-container {
+    max-width: 50%;
+}
+
+.spacer {
+    flex: 1 1 auto;
+}

@@ -1,0 +1,7 @@
+﻿input[type=file] {
+    display: none;
+}
+
+button {
+    margin-left: 15px;
+}

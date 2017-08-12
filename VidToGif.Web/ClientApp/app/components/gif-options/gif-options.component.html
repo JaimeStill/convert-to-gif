@@ -1,0 +1,31 @@
+<md-card class="options-card">
+    <md-card-content>
+        <section class="header-section">
+            <h3>Origin: {{app.gifOptions.value.originName}}</h3>
+            <span class="spacer"></span>
+            <h3>Destination: {{app.gifOptions.value.destinationName}}</h3>
+        </section>
+        <section class="slider-section">
+            <section class="slider-group">
+                <span>FPS: </span>
+                <md-slider [max]="60" [min]="10" [(ngModel)]="app.gifOptions.value.fps" [tick-interval]="5" [step]="1" [thumb-label]="true"></md-slider>
+            </section>
+            <section class="slider-group">
+                <span>Scale: </span>
+                <md-slider [max]="1200" [min]="300" [(ngModel)]="app.gifOptions.value.scale" [tick-interval]="10" [step]="10" [thumb-label]="true"></md-slider>
+            </section>
+        </section>
+        <section class="select-section">
+            <md-select placeholder="Algorithm" [(ngModel)]="app.gifOptions.value.flags">
+                <md-option *ngFor="let flag of app.flags | async" [value]="flag">{{flag}}</md-option>
+            </md-select>
+            <md-select placeholder="Logging" [(ngModel)]="app.gifOptions.value.log">
+                <md-option *ngFor="let log of app.logs | async" [value]="log">{{log}}</md-option>
+            </md-select>
+        </section>
+    </md-card-content>
+    <md-card-actions>
+        <button md-button color="primary" (click)="app.convertToGif()" [disabled]="app.converting | async">Convert</button>
+        <button md-button color="warn" (click)="app.cancelConvert()" [disabled]="app.converting | async">Cancel</button>
+    </md-card-actions>
+</md-card>

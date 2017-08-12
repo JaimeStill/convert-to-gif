@@ -1,0 +1,40 @@
+.header-section {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.header-section h3 {
+    display: inline-block;
+    box-sizing: border-box;
+    margin: 0;
+}
+
+.spacer {
+    flex: 1 1 auto;
+}
+
+.slider-section {
+    display: flex;
+    align-content: space-between;
+    justify-content: flex-start;
+}
+
+.slider-group {
+    margin: 10px 15px 10px 0;
+    flex: 1 1 auto;
+}
+
+.slider-group md-slider.mat-slider {
+    width: 85%;
+}
+
+.select-section {
+    display: flex;
+    align-content: space-between;
+    justify-content: flex-start;
+}
+
+.select-section md-select.mat-select {
+    flex: 1 1 auto;
+    margin: 10px 15px 10px 0;
+}

@@ -1,0 +1,78 @@
+@import '~@angular/material/_theming.scss';
+@include mat-core();
+
+.toaster-red simple-snack-bar.mat-simple-snackbar {
+    color: map-get($mat-red, 500);
+}
+
+.toaster-pink simple-snack-bar.mat-simple-snackbar {
+    color: map-get($mat-pink, A400);
+}
+
+.toaster-purple simple-snack-bar.mat-simple-snackbar {
+    color: map-get($mat-purple, A400);
+}
+
+.toaster-deep-purple simple-snack-bar.mat-simple-snackbar {
+    color: map-get($mat-deep-purple, A400);
+}
+
+.toaster-indigo simple-snack-bar.mat-simple-snackbar {
+    color: map-get($mat-indigo, A400);
+}
+
+.toaster-blue simple-snack-bar.mat-simple-snackbar {
+    color: map-get($mat-blue, 500);
+}
+
+.toaster-light-blue simple-snack-bar.mat-simple-snackbar {
+    color: map-get($mat-light-blue, A400);
+}
+
+.toaster-cyan simple-snack-bar.mat-simple-snackbar {
+    color: map-get($mat-cyan, A400);
+}
+
+.toaster-teal simple-snack-bar.mat-simple-snackbar {
+    color: map-get($mat-teal, A400);
+}
+
+.toaster-green simple-snack-bar.mat-simple-snackbar {
+    color: map-get($mat-green, A400);
+}
+
+.toaster-light-green simple-snack-bar.mat-simple-snackbar {
+    color: map-get($mat-light-green, A400);
+}
+
+.toaster-lime simple-snack-bar.mat-simple-snackbar {
+    color: map-get($mat-lime, A400);
+}
+
+.toaster-yellow simple-snack-bar.mat-simple-snackbar {
+    color: map-get($mat-yellow, A400);
+}
+
+.toaster-amber simple-snack-bar.mat-simple-snackbar {
+    color: map-get($mat-amber, A400);
+}
+
+.toaster-orange simple-snack-bar.mat-simple-snackbar {
+    color: map-get($mat-orange, A400);
+}
+
+.toaster-deep-orange simple-snack-bar.mat-simple-snackbar {
+    color: map-get($mat-deep-orange, A400);
+}
+
+.toaster-brown simple-snack-bar.mat-simple-snackbar {
+    color: map-get($mat-brown, A400);
+}
+
+.toaster-grey simple-snack-bar.mat-simple-snackbar {
+    color: map-get($mat-grey, A400);
+}
+
+.toaster-blue-grey simple-snack-bar.mat-simple-snackbar {
+    color: map-get($mat-blue-grey, A400);
+}
