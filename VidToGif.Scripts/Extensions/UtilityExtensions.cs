@@ -58,15 +58,6 @@ namespace VidToGif.Scripts.Extensions
                     }
                 }
 
-                if (ps.Streams.Information.Count > 0)
-                {
-                    foreach (var info in ps.Streams.Information)
-                    {
-                        result.AppendLine(info.ToString());
-                    }
-                }
-
-                output.result = result.ToString();
                 output.error = error.ToString();
 
                 return output;

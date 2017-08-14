@@ -69,7 +69,14 @@ namespace VidToGif.Scripts.Extensions
                         ps.Runspace = rs;
                         ps.Commands.AddCommand(createGif);
                         ps.Invoke();
-                        return await ps.GetPowershellOutput();
+                        var output = await ps.GetPowershellOutput();
+
+                        if (!output.hasError)
+                        {
+                            output.result = $"{model.destination} successfully created";
+                        }
+
+                        return output;
                     }
                 }
 
