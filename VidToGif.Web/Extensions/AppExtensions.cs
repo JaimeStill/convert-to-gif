@@ -190,7 +190,7 @@ namespace VidToGif.Web.Extensions
         {
             var info = new FileInfo(file);
             var index = info.FullName.IndexOf("wwwroot") + 7;
-            var path = info.FullName.Substring(index);
+            var path = info.FullName.Substring(index).Replace(@"wwwroot\", string.Empty);
 
             return new UploadDetails
             {
