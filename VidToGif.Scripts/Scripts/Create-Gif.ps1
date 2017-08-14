@@ -18,11 +18,5 @@ Param(
 
 $palette = "${env:TEMP}\palette.png"
 $filters = "fps=$fps,scale=$scale`:-1:flags=$flags"
-
-Write-Host "Generating Palette from Video..."
 & $exec -v $log -i $origin -vf "$filters,palettegen" -y $palette
-
-Write-Host "Creating GIF from Palette..."
 & $exec -v $log -i $origin -i $palette -lavfi "$filters [x]; [x][1:v] paletteuse" -y $destination
-
-Write-Host "$destination successfully created!"
