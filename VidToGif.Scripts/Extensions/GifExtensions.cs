@@ -48,7 +48,7 @@ namespace VidToGif.Scripts.Extensions
             try
             {
                 InitialSessionState iss = InitialSessionState.CreateDefault();
-                iss.ExecutionPolicy = Microsoft.PowerShell.ExecutionPolicy.Unrestricted;
+                // iss.ExecutionPolicy = Microsoft.PowerShell.ExecutionPolicy.Unrestricted;
 
                 using (Runspace rs = RunspaceFactory.CreateRunspace(iss))
                 {
